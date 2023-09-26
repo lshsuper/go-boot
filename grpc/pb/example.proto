@@ -1,0 +1,22 @@
+
+
+syntax = "proto3";
+option go_package = "./;pb";
+
+package pb;
+
+// SayReq 请求体
+message SayReq {
+  bytes message = 1;
+}
+
+//SayRes 响应体
+message SayRes {
+  bytes message = 1;
+}
+
+// Example service 业务体
+service Example {
+  // Say is simple request.
+  rpc Say(SayReq) returns (SayRes) {}
+}
